@@ -1,11 +1,14 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     pizza.setPosition(randint(0, 160), 0)
+    music.buzzer.play()
     info.startCountdown(10)
+    mySprite.startEffect(effects.spray)
 })
 let pizza: Sprite = null
+let mySprite: Sprite = null
 scene.setBackgroundColor(6)
-let mySprite = sprites.create(img`
+mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
